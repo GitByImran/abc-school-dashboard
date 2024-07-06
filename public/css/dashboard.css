@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: auto 20px;
+}
+
+nav {
+    background: #e4e4e4;
+    padding: 10px 0;
+}
+
+.custom-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #218838;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.logged-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.logged-user .fas.fa-user-gear {
+    color: #0056b3;
+}
+
+.logged-user span {
+    font-weight: 500;
+}
+
+.logout-button {
+    margin-left: 10px;
+    align-self: center;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+
+/*  */
+
+.contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.contents .left {
+    grid-column: 1 / 2;
+}
+
+.contents .right {
+    grid-column: 2 / 4;
+}
+
+/*  */
+
+.student-form {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgb(219, 219, 219);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+/*  */
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(219, 219, 219);
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.user-table td:last-child {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.edit-button,
+.delete-button {
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button {
+    font-size: 14px;
+    background-color: #007bff;
+}
+
+.delete-button {
+    font-size: 14px;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.edit-button a,
+.delete-button a {
+    color: #fff;
+}
+
+/*  */
+
+.show-message {
+    font-size: 16px;
+    text-align: center;
+    color: #dc3545;
+    margin: 10px 0;
+}
+
+.no-data {
+    text-align: center;
+    color: #777;
+    font-size: 1.2em;
+}
+
+.pagination-links > nav {
+    background: none;
+}
+
+.pagination-links > nav > ul {
+    place-content: center;
+}
