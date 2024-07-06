@@ -22,28 +22,22 @@ class studentController extends Controller
 
     function getData()
     {
-        $records = DB::table('students')->paginate(6);
+        $records = studentModel::paginate(8);
         return view('dashboard', ['students' => $records]);
     }
 
     function editData($id)
     {
         $student = studentModel::find($id);
-        return view('dashboard', ['students' => studentModel::get(), 'editStudent' => $student]);
+        $records = studentModel::paginate(8);
+        return view('dashboard', ['students' => $records, 'editStudent' => $student]);
     }
 
     function deleteData($id)
     {
-        // Fetch the student's record
         $student = studentModel::findOrFail($id);
-
-        // Get the student's name
         $studentName = $student->name;
-
-        // Delete the student's record
         studentModel::destroy($id);
-
-        // Redirect with the success message including the student's name
-        return redirect('/')->with('deleteSuccess', "$studentName record deleted successfully!");
+        return redirect('/')->with('deleteSuccess', "Student record deleted successfully! Name: $studentName");
     }
 }

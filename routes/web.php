@@ -12,3 +12,4 @@ Route::post('addOrUpdateStudentProcess', [studentController::class, 'saveOrUpdat
 Route::get('/', [studentController::class, 'getData']);
 Route::get('editStudent/{id}', [studentController::class, 'editData']);
 Route::get('deleteStudent/{id}', [studentController::class, 'deleteData']);
+Route::post('logout', [loginFormController::class, 'logout'])->name('logout');

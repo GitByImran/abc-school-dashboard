@@ -22,7 +22,10 @@
                     <span>{{ Session::get('username') }}</span>
                     @endif
                 </p>
-                <a href="#" class="logout-button">Logout</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -52,10 +55,14 @@
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" required value="{{ isset($editStudent) ? $editStudent->address : '' }}">
                 </div>
-                <button type="submit" class="submit-button">{{ isset($editStudent) ? 'Update Student' : 'Add Student +' }}</button>
-                @if(isset($editStudent))
-                <a href="{{ url('/') }}" class="cancel-button">Cancel</a>
-                @endif
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">{{ isset($editStudent) ? 'Update Student' : 'Add Student +' }}</button>
+                    @if(isset($editStudent))
+                    <button class="cancel-button">
+                        <a href="{{ url('/') }}">Cancel</a>
+                    </button>
+                    @endif
+                </div>
             </form>
 
             @if(Session::has('saveSuccess'))
@@ -110,7 +117,7 @@
             @endif
 
             <div class="pagination-links">
-                {{$students->links()}}
+                {{ $students->links() }}
             </div>
         </div>
     </div>
